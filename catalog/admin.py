@@ -28,4 +28,4 @@ class CoinAdmin(admin.ModelAdmin):
 @admin.register(Ruler)
 class RulerAdmin(admin.ModelAdmin):
 
-    list_display = ('name', 'year_of_rule')
+    list_display = ('name', 'year_of_rule', 'id')

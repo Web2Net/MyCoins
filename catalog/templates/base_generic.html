@@ -23,8 +23,8 @@
       {% block sidebar %}
       <ul class="sidebar-nav">
           <li><a href="{% url 'index' %}">Home</a></li>
-          <li><a href="/catalog/rulers/">Все правители</a></li>
-          <li><a href="/catalog/coins/">Монетки</a></li>
+          <li><a href="{% url 'rulers' %}">Все правители</a></li>
+          <li><a href="{% url 'coins' %}">Монетки</a></li>
       </ul>
      {% endblock %}
       </div>

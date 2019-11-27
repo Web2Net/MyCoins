@@ -20,6 +20,8 @@ from . import views
 
 urlpatterns = [
     path ('', views.index, name='index'),
-    url('coins/', views.CoinListView.as_view(), name='coins'),
-    url('rulers/', views.RulersListView.as_view(), name='rules'),
+    path('coins/', views.CoinListView.as_view(), name='coins'),
+    path('coins/<int:pk>', views.CoinDetailView.as_view(), name='coin-detail'),
+    path('rulers/', views.RulersListView.as_view(), name='rulers'),
+    path('rulers/<int:pk>', views.RulersDetailView.as_view(), name='ruler-detail'),
 ]

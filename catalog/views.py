@@ -25,9 +25,17 @@ from django.views import generic
 
 class CoinListView(generic.ListView):
     model = Coin
-    template_name = 'coins_list.html'  # Определение имени вашего шаблона и его расположения
+    template_name = 'coins-list.html'  # Определение имени вашего шаблона и его расположения
+
+class CoinDetailView(generic.DetailView):
+    model = Coin
+    template_name = 'coin-detail.html'  # Определение имени вашего шаблона и его расположения
 
 
 class RulersListView(generic.ListView):
     model = Ruler
-    template_name = 'rulers_list.html'  # Определение имени вашего шаблона и его расположения
+    template_name = 'rulers-list.html'  # Определение имени вашего шаблона и его расположения
+
+class RulersDetailView(generic.DetailView):
+    model = Ruler
+    template_name = 'ruler-detail.html'  # Определение имени вашего шаблона и его расположения
