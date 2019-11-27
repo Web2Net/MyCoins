@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Coin List</h1>
+
+    {% if coin_list %}
+    <ul>
+
+      {% for coin in coin_list %}
+      <li>
+        <a href="{{ coins.get_absolute_url }}">{{ coin.nominal }}</a> ({{coin.year}})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no coins in the library.</p>
+    {% endif %}       
+{% endblock %}

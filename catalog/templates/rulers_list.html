@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Rulers List</h1>
+
+    {% if ruler_list %}
+    <ul>
+
+      {% for ruler in ruler_list %}
+      <li>
+        <a href="{{ rulers.get_absolute_url }}">{{ ruler.name }}</a> ({{ruler.year_of_rule}})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no coins in the library.</p>
+    {% endif %}       
+{% endblock %}
