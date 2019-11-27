@@ -8,7 +8,7 @@
 
       {% for coin in coin_list %}
       <li>
-        <a href="{{ coin.get_absolute_url }}">{{ coin.nominal }}</a> ({{coin.year}})
+        <a href="{{ coin.pk }}">{{ coin.nominal }}</a> ({{coin.year}})
       </li>
       {% endfor %}
 

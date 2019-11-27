@@ -8,7 +8,7 @@
 
       {% for ruler in ruler_list %}
       <li>
-        <a href="{{ rulers.get_absolute_url }}">{{ ruler.name }}</a> ({{ruler.year_of_rule}})
+        <a href="{{ ruler.pk }}">{{ ruler.name }}</a> ({{ruler.year_of_rule}})
       </li>
       {% endfor %}
 

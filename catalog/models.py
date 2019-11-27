@@ -2,12 +2,12 @@ from django.db import models
 
 class Ruler(models.Model): # Model representing a book genre (e.g. Science Fiction, Non Fiction).
     
-    name = models.CharField(max_length=200, help_text="Введите имя правителя, генсека, призидента..")
-    year_of_rule = models.CharField(max_length=200, help_text="Введите годы правления", blank=True)
+    name = models.CharField(u'Имя', max_length=200, help_text="Введите имя правителя, генсека, призидента..")
+    year_of_rule = models.CharField(u'Годы правления', max_length=200, help_text="Введите годы правления", blank=True)
     
     def __str__(self): # String for representing the Model object (in Admin site etc.)
                 
-        return self.name
+        return '{} | {}'.format(self.pk, self.year_of_rule)
 
 class Material(models.Model): # Model representing a book genre (e.g. Science Fiction, Non Fiction).
     
