@@ -1,62 +1,83 @@
 from django.db import models
 
 class Ruler(models.Model): # Model representing a book genre (e.g. Science Fiction, Non Fiction).
-    
     name = models.CharField(u'Имя', max_length=200, help_text="Введите имя правителя, генсека, призидента..")
     year_of_rule = models.CharField(u'Годы правления', max_length=200, help_text="Введите годы правления", blank=True)
     
     def __str__(self): # String for representing the Model object (in Admin site etc.)
-                
-        return '{} | {}'.format(self.pk, self.year_of_rule)
+        return self.name
+
+    class Meta:
+        verbose_name = 'Правитель'    
+        verbose_name_plural = 'Правители'
+
 
 class Material(models.Model): # Model representing a book genre (e.g. Science Fiction, Non Fiction).
-    
     material = models.CharField(max_length=200, help_text="Ведите полное название метериала (медь, серебро, золото..)")
     material_short = models.CharField(max_length=200, help_text="Ведите краткое название метериала (Cu, Ag, Au..)")
     
     def __str__(self): # String for representing the Model object (in Admin site etc.)
-                
         return self.material_short
 
+    class Meta:
+        verbose_name = 'Материал'    
+        verbose_name_plural = 'Материалы'
+
+
 class Nominal(models.Model): # Model representing a book genre (e.g. Science Fiction, Non Fiction).
-    
-    nominal = models.CharField(max_length=200, help_text="Ведите номинал (полушка, 5 копеек, 10 рублей..)")
+    nominal = models.CharField(u'номинал', max_length=200, help_text="Ведите номинал (полушка, 5 копеек, 10 рублей..)")
     
     def __str__(self): # String for representing the Model object (in Admin site etc.)
-                
         return self.nominal
 
+    class Meta:
+        verbose_name = 'Номинал'    
+        verbose_name_plural = 'Номиналы'
+
+
 class MD(models.Model): # Model representing a book genre (e.g. Science Fiction, Non Fiction).
-    
     md = models.CharField(max_length=200, help_text="Ведите монетный двор (ЕМ, АМ, КМ, СПБ..)")
     
     def __str__(self): # String for representing the Model object (in Admin site etc.)
-                
         return self.md
 
+    class Meta:
+        verbose_name = 'Монетный двор'    
+        verbose_name_plural = 'Монетные дворы'
+
+
 class MCM(models.Model): # Model representing a book genre (e.g. Science Fiction, Non Fiction).
-    
     mcm = models.CharField(max_length=200, help_text="")
     
     def __str__(self): # String for representing the Model object (in Admin site etc.)
-                
         return self.mcm
 
+    class Meta:
+        verbose_name = 'Инициалы минцмейстера'    
+        verbose_name_plural = 'Инициалы минцмейстеров'
+
+
 class Gyrt(models.Model): # Model representing a book genre (e.g. Science Fiction, Non Fiction).
-    
     gyrt = models.CharField(max_length=200, help_text="")
     
     def __str__(self): # String for representing the Model object (in Admin site etc.)
-                
         return self.gyrt
 
-class Redkost(models.Model): # Model representing a book genre (e.g. Science Fiction, Non Fiction).
+    class Meta:
+        verbose_name = 'Гурт'    
+        verbose_name_plural = 'Гурты'
 
+
+class Redkost(models.Model): # Model representing a book genre (e.g. Science Fiction, Non Fiction).
     redkost = models.CharField(max_length=200, help_text="")
     
     def __str__(self): # String for representing the Model object (in Admin site etc.)
-                
         return self.redkost
+
+    class Meta:
+        verbose_name = 'Редкость'    
+        verbose_name_plural = 'Редкости'
+
 
 
 from django.urls import reverse #Used to generate URLs by reversing the URL patterns
@@ -92,7 +113,6 @@ class Coin(models.Model):
         """
         String for representing the Model object.
         """
-    
         return self.bitkin
 
     
@@ -102,6 +122,10 @@ class Coin(models.Model):
         Returns the url to access a particular book instance.
         """
         return reverse('coin-detail', args=[str(self.id)])
+
+    class Meta:
+        verbose_name = 'Монета'    
+        verbose_name_plural = 'Монеты'
 
 """
 import uuid # Required for unique book instances

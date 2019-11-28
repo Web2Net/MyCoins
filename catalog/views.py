@@ -31,6 +31,10 @@ class CoinDetailView(generic.DetailView):
     model = Coin
     template_name = 'coin-detail.html'  # Определение имени вашего шаблона и его расположения
 
+# class CoinListSFilterView(generic.ListView):
+#     model = Coin
+#     template_name = 'coins-list-sfilter.html' 
+
 
 class RulersListView(generic.ListView):
     model = Ruler
